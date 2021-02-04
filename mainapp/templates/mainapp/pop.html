@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+{% load static %}
+{% block kemosi %}
+
+{% include "homenavbar.html" %}
+
+<style>
+  #header {
+    background-image:url('../../static/img/t1.jpg');
+    background-size:cover;
+    background-position:center center;
+    background-attachment:none;
+    background-repeat:no-repeat;
+    position:relative;
+}
+.bg-overlay {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:rgba(0,0,0,0.4);
+    z-index:0;
+}
+#header .center {
+    position:relative;
+    z-index:1;
+    color:white;
+}
+#headerintro {
+			margin-left: 50px;
+			font-size:30px;
+			padding-top:300px;
+			color:aliceblue; 
+    }
+    
+#footerfooter {
+  background-color: #6c1079;
+  height: auto;
+  width: 100%;
+  margin-left: 0px;
+  margin-bottom: -60px;
+  color:white
+}
+
+</style>
+
+<div id="header" style="height:600px;">
+
+  <div class="bg-overlay"></div>
+
+<div class="center text-center">
+  <p class="text-left" id="headerintro">Help us give</br> your life</br> back to you</p>
+</div>
+
+</div>
+<!-- /#header -->
+<br>
+<br>
+<br>
+<br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="text-center">
+<center><img src="{% static 'img/depression.jpg' %}" class="img-responsive" style="height:270px;width:auto"></center>
+      </div>
+      <div>
+        <p style="padding:10px" class="text-center">Depression</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="text-center">
+<center><img src="{% static 'img/cigarbeer.png' %}" class="img-responsive" style="height:270px;width:auto"></center>
+          </div>
+          <div>
+            <p style="padding:10px"  class="text-center">Substance Abuse</p>
+          </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="text-center">
+<center><img src="{% static 'img/suicide.png' %}" class="img-responsive" style="height:270px;width:auto"></center>
+          </div>
+          <div>
+            <p style="padding:10px"  class="text-center">Suicide</p>
+          </div>
+    </div>
+  </div>
+  <br><br><br>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <h1 class="text-center">Who We Are</h1>
+    </div>
+    <div class="col-sm-6">
+        <p class="text-muted"> This space here is supposed to be filled by Miriam's Nonsense, fullstop.
+          </p>
+          <p class="text-muted"> This space here is supposed to be filled by Miriam's Nonsense, fullstop.
+            </p>
+            <p class="text-muted"> This space here is supposed to be filled by Miriam's Nonsense, fullstop.
+              </p>
+              <p class="text-muted"> This space here is supposed to be filled by Miriam's Nonsense, fullstop.
+                </p>
+                <p class="text-muted"> This space here is supposed to be filled by Miriam's Nonsense, fullstop.
+                  </p>
+                  <p class="text-muted"> This space here is supposed to be filled by Miriam's Nonsense, fullstop.
+                    </p>
+                    <p class="text-muted"> This space here is supposed to be filled by Miriam's Nonsense, fullstop.
+                      </p>
+                      <p class="text-muted"> This space here is supposed to be filled by Miriam's Nonsense, fullstop.
+                        </p>                
+    </div>
+  </div>
+</div>
+
+
+<div id="msg" class="">
+        <div id="msg-top" style="padding:10px 0px;">
+            <h5 style="color:white;" class="text-center">Talk to us</h5>
+        </div>
+        <div style="padding:5px;">
+          <form method="POST" class="form-group">
+            {% csrf_token %}
+            <p>Please fill the form </b> below and we </b>will come to your rescue</p>
+            <p>Please fill the form </b> below and we </b>will come to your rescue</p>
+            {{ form }}
+            <input type="submit" class="btn btn-primary" value="Submit">
+          </form>
+        <!-- <form class="form-group">
+          <p>Please fill the form </b> below and we </b>will come to your rescue</p>
+           <input type="text" name="" placeholder="enter name" class="form-control" required /><br>
+           
+            <input type="text" name="" placeholder="enter email" class="form-control" required /><br>
+            <p>Please fill the form </b> below and we </b>will come to your rescue</p>
+            <input type="text" name="" placeholder="enter contact" class="form-control" required /><br>
+           <input type="text" name="" placeholder="enter message" class="form-control" required /><br>
+           <input type="submit" style="width:100%;" class="btn btn-primary" name="">
+        </form> -->
+      </div>
+     </div>
+
+{% endblock kemosi %}

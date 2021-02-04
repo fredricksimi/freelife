@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">FREELIFE</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-contols="navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+            <a class="nav-item nav-link" href="{% url 'mainapp:home' %}" style="font-family:'Raleway'">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="{% url 'mainapp:about' %}" style="font-family:'Raleway'">About Us</a>
+            <a class="nav-item nav-link" href="{% url 'mainapp:center' %}" style="font-family:'Raleway'">Centers</a>
+            <a class="nav-item nav-link active" href="{% url 'day:home' %}" style="font-family:'Raleway'">Talk to Us</a>
+            {% if user.is_authenticated %}
+            <a class="nav-item nav-link active" href="{% url 'mainapp:messages' %}" style="font-family:'Raleway'">Messages</a>
+            {% endif %}
+            <a class="nav-item nav-link" href="{% url 'mainapp:contact' %}" style="font-family:'Raleway'">Contact</a>
+        </div>
+    </div>
+</nav>

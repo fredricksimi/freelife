@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block kemosi %}
+{% include 'navbartalk.html' %}
+<br>
+<h2 class="text-center" style="font-family: 'Raleway' ">Feel free to reach out and share with us</h2>
+<br>
+  {% if messages %}
+  {% for message in messages %}
+  <div {% if message.tags %} class="{{ message.tags }}"{% endif %}>
+      {{message}}
+      <button type="button" class="close" data-dismiss = "alert" aria-lable="Close">
+          <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+  {% endfor %}
+{% endif %} 
+<div class="container">
+  <form method="POST">
+    {% csrf_token %}
+    <div class="form-row">
+        <div class="col-sm-6">
+          {{form.firstname|as_crispy_field:"bootstrap"}}
+          {{form.email|as_crispy_field:"bootstrap"}}
+        </div>
+        <div class="col-sm-6">
+            {{form.lastname|as_crispy_field:"bootstrap"}}
+            {{form.id_number|as_crispy_field:"bootstrap"}}
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-sm-4">
+            {{form.phone_number|as_crispy_field:"bootstrap"}}
+        </div>
+        <div class="col-sm-4">
+            {{form.location|as_crispy_field:"bootstrap"}}
+        </div>
+        <div class="col-sm-4">
+            {{form.reason|as_crispy_field:"bootstrap"}}
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-sm-12">
+          {{form.message|as_crispy_field:"bootstrap"}}
+        </div>
+      </div><br>
+      <input type="submit" value="Submit" class="btn btn-danger">
+      
+  </form>
+  <!-- <form method="POST">
+      {% csrf_token %}
+  {{form}}
+      <input type="submit" value="Submit" class="btn btn-info">
+    </form> -->
+  </div>  
+{% endblock kemosi %}

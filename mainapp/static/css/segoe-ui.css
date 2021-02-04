@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'wsfsegoe-uilight';
+    src: url('fonts/wsfsegoe-uilight.eot');
+    src: url('fonts/wsfsegoe-uilight.eot?#iefix') format('embedded-opentype'),
+         url('fonts/wsfsegoe-uilight.woff2') format('woff2'),
+         url('fonts/wsfsegoe-uilight.woff') format('woff'),
+         url('fonts/wsfsegoe-uilight.ttf')  format('truetype'),
+         url('fonts/wsfsegoe-uilight.svg#Monaco') format('svg');
+}

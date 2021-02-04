@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block kemosi %}
+{% include "messagesnavbar.html" %}
+
+<div class="container">
+<br><br>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col" style="font-family: 'Raleway'">Email</th>
+            <th scope="col" style="font-family: 'Raleway'">Firstname</th>
+            <th scope="col" style="font-family: 'Raleway'">Lastname</th>
+            <th scope="col" style="font-family: 'Raleway'">Message</th>
+            <th scope="col" style="font-family: 'Raleway'">Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    {% for ms in msg %}
+        <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td style="font-family: 'Raleway'">{{ms.email}}</td>
+            <td style="font-family: 'Raleway'">{{ms.firstname}}</td>
+            <td style="font-family: 'Raleway'">{{ms.lastname}}</td>
+            <td style="font-family: 'Raleway'">{{ms.message}}</td>
+            <td>
+                <a href="{% url 'mainapp:messagedetail' ms.id %}">
+                    <button class="btn btn-info"><b><span class="small">View Message</span></b></button>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+    {% comment %} <div class="row">
+        <div class="com-sm-3">
+            <p class="text-center"> Sent by: <b>{{ms.firstname}} {{ms.lastname}}</b> </p>
+        </div>
+        <div class="col-sm-3">
+            <p class="text-center">Email: <b>{{ms.email}}</b></p>
+        </div>
+        <div class="col-sm-3">
+            <p class="text-center">Message: {{ms.message}}</p>
+        </div>
+        <div class="col-sm-3">
+            <center>
+                <a href="{% url 'mainapp:messagedetail' ms.id %}">
+                    <button class="btn btn-info">View Message</button>
+                </a>
+            </center>
+        </div>
+    </div> {% endcomment %}
+    
+    <br><br>
+    
+</div>
+
+{% endblock kemosi %}

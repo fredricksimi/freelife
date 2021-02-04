@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block kemosi %}
+{% include "messagesnavbar.html" %}
+
+<div class="container">
+
+
+{% comment %} 
+<table class="table table-borderless table-sm">
+    
+
+    <tbody>
+        <tr>
+            <th scope="row">Sent By: </th>
+            <td>{{msgdtl.firstname}} {{msgdtl.lastname}}</td>
+        </tr><br>
+        <tr>
+            <th scope="row">Email: </th>
+            <td>{{msgdtl.email}}</td>
+        </tr>
+
+        <tr>
+            <th scope="row">Date Posted</th>
+            <td colspan="2">{{msgdtl.date_posted}}</td>
+            
+        </tr>
+
+        <tr>
+            <th scope="row">Message</th>
+            <td colspan="2">{{msgdtl.message}}</td>
+        </tr>        
+    </tbody>
+</table>  {% endcomment %}
+
+
+
+    <div class="">
+        <p class=""><span style="font-family:'Raleway';color:green "><i class="fa fa-user"></i> &nbsp;Sent by:</span> &nbsp;&nbsp;{{msgdtl.firstname}} {{msgdtl.lastname}}</p><br>
+        <p class=""><span style="font-family:'Raleway';color:green "><i class="fa fa-envelope"></i> &nbsp;Email:</span> &nbsp;&nbsp;{{msgdtl.email}}</p><br>
+        <p class=""><span style="font-family:'Raleway';color:green "><i class="fa fa-inbox"></i> &nbsp;Message body:</span> &nbsp;&nbsp;{{msgdtl.message}}</p><br>
+        <p class=""><span style="font-family:'Raleway';color:green "><i class="fa fa-clock"></i> &nbsp;Date Posted:</span> &nbsp;&nbsp;{{msgdtl.date_posted}}</p>
+    </div>
+</div>
+{% endblock kemosi %}

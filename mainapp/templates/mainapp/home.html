@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+{% load static %}
+{% block kemosi %}
+
+{% include "homenavbar.html" %}
+
+<style>
+  #header {
+    background-image:url('../../static/img/home2.jpg');
+    background-size:cover;
+    background-position:center center;
+    background-attachment:none;
+    background-repeat:no-repeat;
+    position:relative;
+}
+.bg-overlay {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:rgba(0,0,0,0.4);
+    z-index:0;
+}
+#header .center {
+    position:relative;
+    z-index:1;
+    color:white;
+}
+#headerintro {
+			margin-left: 50px;
+			font-size:30px;
+			padding-top:250px;
+			color:aliceblue; 
+      font-family: 'Raleway'
+    }
+
+</style>
+
+<div id="header" style="height:600px;">
+
+  <div class="bg-overlay"></div>
+
+<div class="center text-center">
+  <p class="text-center" id="headerintro">You are not alone</br>We'll help you find the best rehab solution</p>
+  <center>
+  <a href="{% url 'day:home' %}"><button class="btn btn-warning"><span class="small">Tell us something</span></button></a>
+  </center>
+</div>
+
+</div>
+<!-- /#header -->
+<br>
+<br>
+<br>
+<br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="text-center">
+<center><img src="{% static 'img/depression.jpg' %}" class="img-responsive" style="height:270px;width:auto"></center>
+      </div>
+      <div>
+        <p style="padding:10px" class="text-center">Depression</p>
+        <p class="text-muted text-center" style="font-family: 'Raleway' ">Depression is a low mood that <br>lasts for ...</p>
+        <center><button class="btn btn-primary"><span class="small">View More</span></button></center>
+      </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="text-center">
+<center><img src="{% static 'img/cigarbeer.png' %}" class="img-responsive" style="height:270px;width:auto"></center>
+          </div>
+          <div>
+            <p style="padding:10px"  class="text-center">Substance Abuse</p>
+            <p class="text-muted text-center" style="font-family: 'Raleway' ">Substance abuse is when <br>you take ...</p>
+            <center><button class="btn btn-primary"><span class="small">View More</span></button></center>
+          </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="text-center">
+<center><img src="{% static 'img/suicide.png' %}" class="img-responsive" style="height:270px;width:auto"></center>
+          </div>
+          <div>
+            <p style="padding:10px"  class="text-center">Suicide</p>
+            <p class="text-muted text-center" style="font-family: 'Raleway' ">Suicide is when you <br>want to ...</p>
+            <center><button class="btn btn-primary"><span class="small">View More</span></button></center>
+          </div>
+    </div>
+  </div>
+  <br><br><br>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <h1 class="text-center pd-7" style="font-family: 'choco_cookyregular'; font-size:50px; ">Seek For Help</h1>
+    </div>
+    <div class="col-sm-6">
+        <p style="font-family: 'Raleway' "> <span style="color:red"><b>WHEN YOU FEEL</b></span><br>
+
+          Depressed, Discouraged, Hopeless, Lonely, Fearful, Stressed or Suicidal. <br><br>
+          
+          <span style="color:purple"><b>LET US HELP YOU.</b></span> <br>
+          
+          Sharing your problems will ease your burden; help you see things more clearly. You will better, stronger and more able to handle the situation.
+          
+          at Befrienders Kenya, we help by listening: 
+          
+          No matter what the problem is, however hopeless things may seem, together we can find a way through the  pain that you are feeling. 
+          
+          Do not go through the pain alone. Sometimes, when you feel all alone and no one seems to understand or care, call us. We care and are here for you. <br><br>
+          
+          <span style="color:blue"><b>WE ARE HERE</b></span> <br>
+          
+          We are here to listen. Everything you say is strictly confidential. You do not have to tell us who you are.
+                        </p>                
+    </div>
+  </div>
+</div>
+
+
+{% endblock kemosi %}
